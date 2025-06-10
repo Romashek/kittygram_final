@@ -30,11 +30,17 @@ dockerhub_username: ваш_логин_на_докерхабе
 Проект подготовлен в рамках финального задания спринта в целях получения навыков настройки и запуска проектов в контейнерах, настройки автоматического тестирования и деплоя проектов на удалённый сервер.
 
 # Стек технологий
-- Python 3.9
-- Django 
-- gunicorn
-- djoser 
-- djangorestframework 
+- Django==3.2.3
+- djangorestframework==3.12.4
+- djoser==2.1.0
+- webcolors==1.11.1
+- psycopg2-binary==2.9.3
+- Pillow==9.0.0
+- pytest==6.2.4
+- pytest-django==4.4.0
+- pytest-pythonpath==0.7.3
+- PyYAML==6.0
+- python-dotenv==1.0.0 
 
 # Инструкция по запуску
 1. форкнуть репозиторий проекта: Romashek/kittygram_final
