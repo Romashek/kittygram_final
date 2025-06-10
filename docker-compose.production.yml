@@ -16,6 +16,8 @@ services:
     volumes:
     - media_volume:/media
     - static_volume:/backend_static
+    depends_on:
+      - db
   frontend:
     env_file: .env
     image: roman200015/kittygram_frontend
@@ -30,3 +32,6 @@ services:
     volumes:
       - static_volume:/static
       - media_volume:/media
+    depends_on:
+      - backend
+      - frontend
