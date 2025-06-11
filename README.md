@@ -1,29 +1,5 @@
-#  Как работать с репозиторием финального задания
+
 [![Main Kittygram workflow](https://github.com/Romashek/kittygram_final/actions/workflows/main.yml/badge.svg)](https://github.com/Romashek/kittygram_final/actions/workflows/main.yml)
-## Что нужно сделать
-
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
-
-## Как проверить работу с помощью автотестов
-
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
-```
-
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
-
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
-
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
 
 # Проект контейнеры и CI/CD для Kittygram
 
@@ -59,7 +35,7 @@ dockerhub_username: ваш_логин_на_докерхабе
 - TELEGRAM_TOKEN (token робота)
 4. на сервере:
 
-- создайте директорию kittygram и создайте в ней файл .env. В файле .env определите значения переменных SECRET_KEY и ALLOWED_HOSTS;
+- создайте директорию kittygram и создайте в ней файл .env. В файле .env определите значения переменных SECRET_KEY, ALLOWED_HOSTS, а также переменные для настройки бд: DB_NAME, DB_PORT, DB_HOST, POSTGRES_PASSWORD, POSTGRES_USER, POSTGRES_DB и переменную DEBUG;
 
 - определите настройки location в секции server в файле /etc/nginx/sites-enabled/default:
 server {
